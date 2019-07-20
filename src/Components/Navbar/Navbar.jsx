@@ -1,22 +1,23 @@
 import React from 'react';
+import s from './Navbar.module.css';
 
 class Navbar extends React.Component {
     render = () => {
         return (
-            <nav className='nav'>
-                <div>
+            <nav className={s.nav}>
+                <div className={s.item}>
                     <a src="#">Profile</a>
                 </div>
-                <div>
+                <div className={s.item}>
                     <a src="#">Messages</a>
                 </div>
-                <div>
+                <div className={s.item}>
                     <a src="#">News</a>
                 </div>
-                <div>
+                <div className={s.item}>
                     <a src="#">Music</a>
                 </div>
-                <div>
+                <div className={s.item}>
                     <a src="#">Settings</a>
                 </div>
             </nav>
