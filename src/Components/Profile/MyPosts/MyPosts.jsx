@@ -13,9 +13,11 @@ class MyPosts extends React.Component {
                         </textarea>
                         <button>Add post</button>
                     </div>
-                    <Post/>
-                    <Post/>
-                    <Post/>
+
+                    <div className={s.posts}>
+                        <Post message='Hi! How are you?' LikesCount="2"/>
+                        <Post message='Hi!you?' LikesCount="23"/>
+                    </div>
             </div>
         );
     }
