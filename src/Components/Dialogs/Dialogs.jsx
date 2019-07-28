@@ -7,6 +7,7 @@ import Profile from "../Profile/Profile";
 import News from "../News/News";
 import Music from "../Music/Music";
 import Settings from "../Settings/Settings";
+import Post from "../Profile/MyPosts/Post/Post";
 
 class DialogsItems extends React.Component {
     render = () => {
@@ -29,21 +30,34 @@ class Message extends React.Component {
 }
 
 
-
 class Dialogs extends React.Component {
     render = () => {
+        let dialogs = [
+            {id: 1, name: 'Mari'},
+            {id: 2, name: 'Roma'},
+            {id: 3, name: 'Vlad'},
+            {id: 4, name: 'Sasha'},
+        ];
+
+        let messages = [
+            {id: 1, message: 'Hello!'},
+            {id: 2, message: 'How are you?'},
+            {id: 3, message: 'I love you'},
+            {id: 4, message: 'Hi)'}
+        ];
+
+        let dialogsElements = dialogs
+            .map( d => <DialogsItems name={d.name} id={d.id}/>);
+        let messagesElements = messages
+            .map(  m => <Message message={m.message}/>);
+
         return (
             <div className={s.dialogs}>
                 <div className={s.dialogsItems}>
-                    <DialogsItems name="Mari" id="1"/>
-                    <DialogsItems name="Roma" id="2"/>
-                    <DialogsItems name="Vlad" id="3"/>
-                    <DialogsItems name="Sasha" id="4"/>
+                    { dialogsElements }
                 </div>
                 <div className={s.messages}>
-                    <Message message="Hello!"/>
-                    <Message message="How are you?"/>
-                    <Message message="I love you"/>
+                    { messagesElements }
                 </div>
             </div>
         );

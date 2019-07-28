@@ -4,19 +4,28 @@ import Post from "./Post/Post";
 
 class MyPosts extends React.Component {
     render = () => {
-        return (
-            <div>
-                    My posts
-                    <div>
-                        <textarea>
+        let posts = [
+            {id: 1, message: 'Hi! How are you?', LikesCount: 2},
+            {id: 2, message: 'Hi!you?', LikesCount: 23},
+            {id: 3, message: 'I love you', LikesCount: 15},
+        ];
 
-                        </textarea>
-                        <button>Add post</button>
+        let postsElements = posts.map( p => <Post message={p.message} LikesCount={p.LikesCount}/>);
+
+        return (
+            <div className={s.postsBlock}>
+                <h3>My posts</h3>
+                    <div>
+                        <div>
+                            <textarea>  </textarea>
+                        </div>
+                        <div>
+                            <button>Add post</button>
+                        </div>
                     </div>
 
                     <div className={s.posts}>
-                        <Post message='Hi! How are you?' LikesCount="2"/>
-                        <Post message='Hi!you?' LikesCount="23"/>
+                        { postsElements }
                     </div>
             </div>
         );
