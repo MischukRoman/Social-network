@@ -1,34 +1,7 @@
 import React from 'react';
 import s from './Dialogs.module.css';
-import {BrowserRouter, NavLink} from "react-router-dom";
-import Header from "../Header/Header";
-import Navbar from "../Navbar/Navbar";
-import Profile from "../Profile/Profile";
-import News from "../News/News";
-import Music from "../Music/Music";
-import Settings from "../Settings/Settings";
-import Post from "../Profile/MyPosts/Post/Post";
-
-class DialogsItems extends React.Component {
-    render = () => {
-        return (
-            <div className={s.dialog + ' ' + s.active}>
-                <NavLink to={"/dialogs/" + this.props.id}>{this.props.name}</NavLink>
-            </div>
-        );
-    }
-}
-
-class Message extends React.Component {
-    render = () => {
-        return (
-            <div className={s.message}>
-                {this.props.message}
-            </div>
-        );
-    }
-}
-
+import DialogsItems from "./DialogsItems/DialogsItems";
+import Message from "./Message/Message";
 
 class Dialogs extends React.Component {
     render = () => {
