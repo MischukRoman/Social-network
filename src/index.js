@@ -4,9 +4,26 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+let dialogs = [
+    {id: 1, name: 'Mari'},
+    {id: 2, name: 'Roma'},
+    {id: 3, name: 'Vlad'},
+    {id: 4, name: 'Sasha'},
+];
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
+let messages = [
+    {id: 1, message: 'Hello!'},
+    {id: 2, message: 'How are you?'},
+    {id: 3, message: 'I love you'},
+    {id: 4, message: 'Hi)'}
+];
+
+let posts = [
+    {id: 1, message: 'Hi! How are you?', LikesCount: 2},
+    {id: 2, message: 'Hi!you?', LikesCount: 23},
+    {id: 3, message: 'I love you', LikesCount: 15},
+];
+
+ReactDOM.render(<App dialogs={(dialogs)} messages={(messages)} posts={posts}/>, document.getElementById('root'));
+
 serviceWorker.unregister();
