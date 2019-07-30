@@ -8,7 +8,7 @@ class Profile extends React.Component {
         return (
             <div className={s.content}>
                 <ProfileInfo/>
-                <MyPosts posts={this.props.posts}/>
+                <MyPosts posts={this.props.state.posts}/>
             </div>
         );
     }

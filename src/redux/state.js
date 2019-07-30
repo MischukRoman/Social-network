@@ -1,13 +1,13 @@
 
 let state = {
-    messagesPage: {
-        profilePage: {
-            posts: [
-                {id: 1, message: 'Hi! How are you?', LikesCount: 2},
-                {id: 2, message: 'Hi!you?', LikesCount: 23},
-                {id: 3, message: 'I love you', LikesCount: 15},
-            ]
-        },
+    profilePage: {
+        posts: [
+            {id: 1, message: 'Hi! How are you?', LikesCount: 2},
+            {id: 2, message: 'Hi!you?', LikesCount: 23},
+            {id: 3, message: 'I love you', LikesCount: 15},
+        ]
+    },
+    dialogsPage: {
         dialogs: [
             {id: 1, name: 'Mari'},
             {id: 2, name: 'Roma'},
