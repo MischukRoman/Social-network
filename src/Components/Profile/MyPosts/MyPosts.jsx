@@ -2,12 +2,9 @@ import React from 'react';
 import s from './MyPosts.module.css';
 import Post from "./Post/Post";
 
-class MyPosts extends React.Component {
-    render = () => {
-
-        let postsElements = this.props.posts.map( p =>
+const MyPosts = (props) => {
+        let postsElements = props.posts.map( p =>
             <Post message={p.message} LikesCount={p.LikesCount}/>);
-
         return (
             <div className={s.postsBlock}>
                 <h3>My posts</h3>
@@ -25,7 +22,6 @@ class MyPosts extends React.Component {
                     </div>
             </div>
         );
-    }
-}
+};
 
 export default MyPosts;

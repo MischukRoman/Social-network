@@ -9,5 +9,4 @@ import state from "./redux/state";
 ReactDOM.render(<App state={state}/>, document.getElementById('root'));
 
 serviceWorker.unregister();
-
 //dialogs={(state.dialogs)} messages={(state.messages)} posts={(state.posts)}
