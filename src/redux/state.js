@@ -8,13 +8,8 @@ let state = {
             {id: 2, message: 'Hi!you?', LikesCount: 23, img: "http://via.placeholder.com/50"},
             {id: 3, message: 'I love you', LikesCount: 15, img: "http://via.placeholder.com/50"},
         ],
-        newPost: [
-           {id: 4,
-            message: '',
-            LikesCount: 15,
-            img: "http://via.placeholder.com/50"}
-        ]
-    },
+        newPostText: ''
+        },
     dialogsPage: {
         dialogs: [
             {id: 1, name: 'Mari', img: "http://via.placeholder.com/50"},
@@ -33,12 +28,20 @@ let state = {
 };
 
 export let addPost = () => {
-  state.profilePage.posts.push(state.profilePage.newPost);
-  rerenderEntireTree(state);
+    let newPost = {
+        id: 4,
+        message: state.profilePage.newPostText,
+        LikesCount: 15,
+        img: "http://via.placeholder.com/50"
+    };
+    state.profilePage.posts.push(newPost);
+    state.profilePage.newPostText = "";
+    rerenderEntireTree(state);
 };
 
-export let changePost = (postChanges) => {
-    state.profilePage.newPost.message += postChanges;
+export let updateNewPostText = (newText) => {
+    state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
 };
 
 export default state;
