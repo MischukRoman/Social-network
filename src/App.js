@@ -4,32 +4,29 @@ import Header from "./Components/Header/Header";
 import Navbar from "./Components/Navbar/Navbar";
 import Profile from "./Components/Profile/Profile";
 import Dialogs from "./Components/Dialogs/Dialogs";
-import {BrowserRouter, Route} from "react-router-dom";
+import {Route} from "react-router-dom";
 import News from "./Components/News/News";
 import Music from "./Components/Music/Music";
 import Settings from "./Components/Settings/Settings";
+import {changePost} from "./redux/state";
 
-
-class App extends React.Component {
-    render = () => {
+const App = (props) => {
         return (
-            <BrowserRouter>
                 <div className='app-wrapper'>
                     <Header/>
                     <Navbar/>
                     <div className='app-wrapper-content'>
                         <Route path='/profile' render={() =>
-                            <Profile state={this.props.state.profilePage}/>}/>
+                            <Profile state={props.state.profilePage}
+                                     addPost={props.addPost} changePost={changePost}/>}/>
                         <Route path='/dialogs' render={ () =>
-                            <Dialogs state={this.props.state.dialogsPage}/>}/>
+                            <Dialogs state={props.state.dialogsPage}/>}/>
                         <Route path='/news' component={News}/>
                         <Route path='/music' component={Music}/>
                         <Route path='/settings' component={Settings}/>
                     </div>
                 </div>
-            </BrowserRouter>
         );
-    }
-}
+};
 
 export default App;
