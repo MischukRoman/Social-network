@@ -18,12 +18,13 @@ let state = {
             {id: 4, name: 'Sasha', img: "http://via.placeholder.com/50"},
         ],
         messages: [
-            {id: 1, message: 'Hello!', from: 'me'},
-            {id: 2, message: 'How are you?', from: 'me'},
-            {id: 3, message: 'I love you', from: 'me'},
-            {id: 4, message: 'Hi)', from: 'you'},
-            {id: 5, message: 'I love you to', from: 'you'},
-        ]
+            {id: 1, message: 'Hello!', from: 'me',  img: "http://via.placeholder.com/50"},
+            {id: 2, message: 'How are you?', from: 'me',  img: "http://via.placeholder.com/50"},
+            {id: 3, message: 'I love you', from: 'me',  img: "http://via.placeholder.com/50"},
+            {id: 4, message: 'Hi)', from: 'you',  img: "http://via.placeholder.com/50"},
+            {id: 5, message: 'I love you to', from: 'you',  img: "http://via.placeholder.com/50"},
+        ],
+        newMessageText:''
     },
 };
 
@@ -41,6 +42,23 @@ export let addPost = () => {
 
 export let updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+};
+
+export let addMessage = () => {
+    let newMessage = {
+        id: 6,
+        message: state.dialogsPage.newMessageText,
+        from: 'me',
+        img: "http://via.placeholder.com/50"
+    };
+    state.dialogsPage.messages.push(newMessage);
+    state.dialogsPage.newMessageText = "";
+    rerenderEntireTree(state);
+};
+
+export let updateNewMessageText = (newText) => {
+    state.dialogsPage.newMessageText = newText;
     rerenderEntireTree(state);
 };
 

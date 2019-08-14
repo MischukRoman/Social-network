@@ -1,14 +1,13 @@
 import React from 'react';
 import s from './DialogsItems.module.css';
-import {NavLink} from "react-router-dom";
+import DialogsItem from "./DialogItem/DialogsItem";
 
 const DialogsItems = (props) => {
+    let dialogsElements = props.dialogsPage.dialogs.map( d => <DialogsItem name={d.name} id={d.id} img={d.img}/>);
+
     return (
-        <div className={s.item}>
-            <NavLink to={"/dialogs/" + props.id} activeClassName={s.active}>
-                <img src={props.img}/>
-                {props.name}
-            </NavLink>
+        <div className={s.dialogsItems}>
+            { dialogsElements }
         </div>
     );
 };

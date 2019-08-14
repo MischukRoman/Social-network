@@ -1,17 +1,3 @@
-
-.item {
-    padding: 8px;
-}
-
-.item a{
-    color: white;
-    text-decoration: none;
-}
-.item a.active{
-    color: gold;
-}
-.item img{
-    height: 50px;
-    width: 50px;
-    border-radius: 50px;
+.dialogsItems {
+    padding: 10px;
 }
