@@ -27,7 +27,6 @@ let state = {
         newMessageText:''
     },
 };
-
 export const addPost = () => {
     let newPost = {
         id: 4,
@@ -39,12 +38,10 @@ export const addPost = () => {
     state.profilePage.newPostText = "";
     rerenderEntireTree(state);
 };
-
 export const updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
     rerenderEntireTree(state);
 };
-
 export const addMessage = () => {
     let newMessage = {
         id: 6,
@@ -56,12 +53,10 @@ export const addMessage = () => {
     state.dialogsPage.newMessageText = "";
     rerenderEntireTree();
 };
-
 export const updateNewMessageText = (newText) => {
     state.dialogsPage.newMessageText = newText;
     rerenderEntireTree();
 };
-
 export const subscribe = (observer) => {
     rerenderEntireTree = observer;
 };
