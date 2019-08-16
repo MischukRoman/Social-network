@@ -3,16 +3,22 @@ import s from './Messages.module.css';
 import Message from "./Message/Message";
 
 const Messages = (props) => {
-    let messagesElements = props.dialogsPage.messages.map(  m => <Message message={m.message} img={m.img} from={m.from}/>);
+    let messagesElements = props.dialogsPage.messages.map(  m => <Message message={m.message}
+                                                                          img={m.img}
+                                                                          from={m.from}/>);
 
     let newMessage = () => {
-        props.addMessage();
-        props.updateNewMessageText('');
+        props.dispatch({type: "ADD-MESSAGE",});
+        props.dispatch({type: "UPDATE-NEW-MESSAGE-TEXT",
+            newText: ""
+        });
     };
 
     let updateNewMessage = () => {
         let text = newMessageElement.current.value;
-        props.updateNewMessageText(text);
+        props.dispatch({type: "UPDATE-NEW-MESSAGE-TEXT",
+            newText: text
+        });
     };
 
     let newMessageElement = React.createRef();

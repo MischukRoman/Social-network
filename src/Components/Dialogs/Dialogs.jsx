@@ -8,8 +8,7 @@ const Dialogs = (props) => {
         <div className={s.dialogs}>
             <DialogsItems dialogsPage={props.dialogsPage}/>
             <Messages dialogsPage={props.dialogsPage}
-                      updateNewMessageText={props.updateNewMessageText}
-                      addMessage={props.addMessage}/>
+                      dispatch={props.dispatch}/>
         </div>
     );
 };
