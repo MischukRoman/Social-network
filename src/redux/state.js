@@ -1,3 +1,6 @@
+import profileReducer from "./profileReducer";
+import dislogsReducer from "./dialogsReducer";
+
 const ADD_POST = "ADD-POST";
 const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 const ADD_MESSAGE = "ADD-MESSAGE";
@@ -42,33 +45,11 @@ let store = {
         this._callSubscriber = observer;
     },
     dispatch(action) {
-        if(action.type === ADD_POST){
-            let newPost = {
-                id: 4,
-                message: this._state.profilePage.newPostText,
-                LikesCount: 15,
-                img: "http://via.placeholder.com/50"
-            };
-            this._state.profilePage.posts.push(newPost);
-            this._state.profilePage.newPostText = "";
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_POST_TEXT) {
-            this._state.profilePage.newPostText = action.newText;
-            this._callSubscriber(this._state);
-        } else if (action.type === ADD_MESSAGE) {
-            let newMessage = {
-                id: 6,
-                message: this._state.dialogsPage.newMessageText,
-                from: 'me',
-                img: "http://via.placeholder.com/50"
-            };
-            this._state.dialogsPage.messages.push(newMessage);
-            this._state.dialogsPage.newMessageText = "";
-            this._callSubscriber(this._state);
-        } else if (action.type === UPDATE_NEW_MESSAGE_TEXT) {
-            this._state.dialogsPage.newMessageText = action.newText;
-            this._callSubscriber(this._state);
-        }
+
+        dislogsReducer(this._state.dialogsPage, action);
+        profileReducer(this._state.profilePage, action);
+
+        this._callSubscriber(this._state);
     },
 };
 

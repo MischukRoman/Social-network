@@ -13,21 +13,20 @@ const Messages = (props) => {
         props.dispatch( updateNewMessageTextActionCreator("") );
     };
 
-    let updateNewMessage = () => {
-        let text = newMessageElement.current.value;
+    let updateNewMessage = (e) => {
+        let text = e.target.value;
         props.dispatch( updateNewMessageTextActionCreator(text) );
     };
 
-    let newMessageElement = React.createRef();
 
     return (
         <div className={s.messages}>
             { messagesElements }
             <div>
                 <div>
-                    <textarea ref={newMessageElement}
-                              onChange={updateNewMessage}
-                              value={props.newMessageText}/>
+                    <textarea onChange={updateNewMessage}
+                              value={props.newMessageText}
+                              placeholder="Введите сообщение"/>
                 </div>
                 <div>
                     <button onClick={newMessage}>Send</button>
