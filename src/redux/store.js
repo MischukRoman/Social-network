@@ -1,11 +1,5 @@
-import profileReducer from "./profileReducer";
-import dislogsReducer from "./dialogsReducer";
-
-const ADD_POST = "ADD-POST";
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
-const ADD_MESSAGE = "ADD-MESSAGE";
-const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
-
+import profileReducer from "./profile-reducer";
+import dislogsReducer from "./dialogs-reducer";
 
 let store = {
     _state: {
@@ -37,7 +31,6 @@ let store = {
     _callSubscriber() {
         console.log("State changed");
     },
-
     getState(){
         return this._state;
     },
@@ -45,24 +38,12 @@ let store = {
         this._callSubscriber = observer;
     },
     dispatch(action) {
-
         dislogsReducer(this._state.dialogsPage, action);
         profileReducer(this._state.profilePage, action);
 
         this._callSubscriber(this._state);
     },
 };
-
-export const addPostActionCreator = () => ({type: ADD_POST});
-export const updateNewPostTextActionCreator = (text) =>
-    ({type: UPDATE_NEW_POST_TEXT, newText: text});
-
-export const addMessageActionCreator = () => ({type: ADD_MESSAGE});
-export const updateNewMessageTextActionCreator = (text) =>
-    ({type: UPDATE_NEW_MESSAGE_TEXT, newText: text});
-
-
-
 
 export default store;
 
