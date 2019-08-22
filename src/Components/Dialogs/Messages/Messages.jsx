@@ -1,21 +1,18 @@
 import React from 'react';
 import s from './Messages.module.css';
 import Message from "./Message/Message";
-import {addMessageActionCreator, updateNewMessageTextActionCreator} from "../../../redux/dialogs-reducer";
 
 const Messages = (props) => {
     let messagesElements = props.messages.map(  m => <Message message={m.message}
                                                                           img={m.img}
                                                                           from={m.from}/>);
-
     let newMessage = () => {
-        props.dispatch( addMessageActionCreator() );
-        props.dispatch( updateNewMessageTextActionCreator("") );
+        props.newMessage();
     };
 
     let updateNewMessage = (e) => {
         let text = e.target.value;
-        props.dispatch( updateNewMessageTextActionCreator(text) );
+        props.updateNewMessage(text);
     };
 
 
