@@ -19,20 +19,24 @@ let initialState = {
 };
 
 const dislogsReducer = (state = initialState, action) => {
+
     switch (action.type) {
-      case ADD_MESSAGE:
-          let newMessage = {
-            id: 6,
-            message: state.newMessageText,
-            from: 'me',
-            img: "http://via.placeholder.com/50"
-          };
-          state.messages.push(newMessage);
-          state.newMessageText = "";
-          return state;
+
+        case ADD_MESSAGE:
+            let newMessage = {
+                id: 6,
+                message: state.newMessageText,
+                from: 'me',
+                img: "http://via.placeholder.com/50"
+            }
+            return ({...state,
+                messages: [...state.messages, newMessage],
+                newMessageText: ""}
+                );
+
       case UPDATE_NEW_MESSAGE_TEXT:
-          state.newMessageText = action.newText;
-          return state;
+          return ({...state, newMessageText: action.newText});
+
       default:
         return state;
     }
