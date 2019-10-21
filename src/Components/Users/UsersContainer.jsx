@@ -1,10 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {
-    follow, getUsers,
+    followSuccess, getUsers,
     setCurrentPage,
     toggleFollowingProgress,
-    unfollow
+    unfollowSuccess
 } from '../../redux/users-reducer';
 import Preloader from "../common/Preloader/Preloader";
 import Users from './Users';
@@ -28,8 +28,8 @@ class UsersAPIComponent extends React.Component {
                     pageSize={this.props.pageSize}
                     currentPage={this.props.currentPage}
                     users={this.props.users}
-                    unfollow={this.props.unfollow}
-                    follow={this.props.follow}
+                    unfollow={this.props.unfollowSuccess}
+                    follow={this.props.followSuccess}
                     onPageChanged={this.onPageChanged}
                     toggleFollowingProgress={this.props.toggleFollowingProgress}
                     followingInProgress={this.props.followingInProgress}/>
@@ -50,6 +50,8 @@ let mapStateToProps = (state) => {
 };
 
 /*
+// Старая версия функции mapDispatchToProps, сейчас все записано болеее сокращенным синтаксисом, а это розширеный
+
 let mapDispatchToProps = (dispatch) => {
     return {
 
@@ -73,8 +75,8 @@ let mapDispatchToProps = (dispatch) => {
 
 
 export default connect(mapStateToProps, {
-    follow,
-    unfollow,
+    followSuccess,
+    unfollowSuccess,
     setCurrentPage,
     toggleFollowingProgress,
     getUsers
