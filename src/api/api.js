@@ -22,13 +22,12 @@ export const usersAPI = {
 
 export const profileAPI = {
     getUserProfile(userId = 2){
-        debugger
-        return instance.get(`profile/${userId}`).then(response => response.data)
+        return instance.get(`profile/${userId}`);
     },
 };
 
 export const authAPI = {
-    getAuth(){
-        return instance.get(`auth/me`).then(response => response.data)
+    me(){
+        return instance.get(`auth/me`);
     },
 };

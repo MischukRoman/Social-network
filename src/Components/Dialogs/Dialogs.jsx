@@ -4,6 +4,7 @@ import DialogsItems from "./DialogsItems/DialogsItems";
 import MessagesContainer from "./Messages/MessagesContainer";
 
 const Dialogs = (props) => {
+
     return (
         <div className={s.dialogs}>
             <DialogsItems dialogsPage={props.store.getState().dialogsPage}/>

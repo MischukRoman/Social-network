@@ -50,10 +50,10 @@ export const setUserProfile = (profile) => ({type: SET_USER_PROFILE, profile});
 export const updateNewPostTextActionCreator = (text) =>
     ({type: UPDATE_NEW_POST_TEXT, newText: text});
 
-export const getUserProfilel = (userId) => (dispatch) => {
+export const getUserProfile = (userId) => (dispatch) => {
     profileAPI.getUserProfile(userId)
-        .then(data => {
-            dispatch(setUserProfile(data));
+        .then(response => {
+            dispatch(setUserProfile(response.data));
         })
 };
 
