@@ -1,18 +1,21 @@
 import React from 'react';
 import s from './Login.module.css';
+import {Field, reduxForm} from "redux-form";
+import {Input} from "../common/FormsControls/FormsControls";
+import {maxLengthCreator, required} from "../../utils/validators/validators";
 
 
 const LoginForm = (props) => {
     return (
-            <form>
+            <form onSubmit={props.handleSubmit}>
                 <div>
-                    <input placeholder="Login"/>
+                    <Field placeholder={"Login"} name={"login"} component={Input} validate={[required]}/>
                 </div>
                 <div>
-                    <input placeholder="Password"/>
+                    <Field placeholder={"Password"} name={"password"} component={Input} validate={[required]}/>
                 </div>
                 <div>
-                    <input type={'checkbox'}/> remember me
+                    <Field type={'checkbox'} name={"rememberMe"} component={Input}/> remember me
                 </div>
                 <div>
                     <button>Login</button>
@@ -21,11 +24,19 @@ const LoginForm = (props) => {
     );
 };
 
+const LoginReduxForm = reduxForm({
+    form: "login"
+}) (LoginForm);
+
 const Login = (props) => {
+    const onSubmit = (formData) => {
+    console.log(formData)
+    };
+
         return (
             <div>
                 <h1>Login</h1>
-                <LoginForm/>
+                <LoginReduxForm onSubmit={onSubmit}/>
             </div>
         );
 };

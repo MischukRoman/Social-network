@@ -1,5 +1,4 @@
 const ADD_MESSAGE = "ADD-MESSAGE";
-const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
 
 let initialState = {
     dialogs: [
@@ -15,7 +14,6 @@ let initialState = {
     {id: 4, message: 'Hi)', from: 'you', img: "http://via.placeholder.com/50"},
     {id: 5, message: 'I love you to', from: 'you', img: "http://via.placeholder.com/50"},
     ],
-    newMessageText: '',
 };
 
 const dislogsReducer = (state = initialState, action) => {
@@ -25,25 +23,18 @@ const dislogsReducer = (state = initialState, action) => {
         case ADD_MESSAGE:
             let newMessage = {
                 id: 6,
-                message: state.newMessageText,
+                message: action.newMessageBody,
                 from: 'me',
                 img: "http://via.placeholder.com/50"
-            }
+            };
             return ({...state,
-                messages: [...state.messages, newMessage],
-                newMessageText: ""}
+                messages: [...state.messages, newMessage]}
                 );
-
-      case UPDATE_NEW_MESSAGE_TEXT:
-          return ({...state, newMessageText: action.newText});
-
       default:
         return state;
     }
 };
 
-export const addMessageActionCreator = () => ({type: ADD_MESSAGE});
-export const updateNewMessageTextActionCreator = (text) =>
-    ({type: UPDATE_NEW_MESSAGE_TEXT, newText: text});
+export const addMessage = (newMessageBody) => ({type: ADD_MESSAGE, newMessageBody});
 
 export default dislogsReducer;
