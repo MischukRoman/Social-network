@@ -9,7 +9,8 @@ const Header = (props) => {
                     <img src="http://brend-logo.ru/assets/976fb447/images/cssp_logo.png"/>
 
                     <div className={s.loginBlock}>
-                        { props.isAuth ? props.login : <NavLink to={'/login'}>Login</NavLink> }
+                        { props.isAuth ? <div>{props.login} - <button onClick={props.logout}>Logout</button></div>
+                            : <NavLink to={'/login'}>Login</NavLink> }
                     </div>
                 </header>
         );
