@@ -3,14 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4ff54fbf-f24f-4d68-89aa-a47c894b2165" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Header/HeaderContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/HeaderContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Login/Login.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Login/Login.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Profile/ProfileContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Profile/ProfileContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/common/FormsControls/FormsControls.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/common/FormsControls/FormsControls.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/auth-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth-reducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,8 +13,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -33,6 +25,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JavaScript" />
     <property name="js.last.introduce.type" value="LET" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -103,7 +96,9 @@
       <workItem from="1571898917203" duration="12685000" />
       <workItem from="1572017309089" duration="25000" />
       <workItem from="1572177074609" duration="30203000" />
-      <workItem from="1572588626833" duration="8004000" />
+      <workItem from="1572588626833" duration="8270000" />
+      <workItem from="1572629778157" duration="150000" />
+      <workItem from="1572630096109" duration="606000" />
     </task>
     <servers />
   </component>
