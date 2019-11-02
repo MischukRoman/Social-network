@@ -9,12 +9,12 @@ import {Provider} from "react-redux";
 
 ReactDOM.render(
     <BrowserRouter>
-        <Provider store={store}>
-            <App state={store.getState()}
-                 store={store}
-                 dispatch={store.dispatch.bind(store)}/>
-        </Provider>
-    </BrowserRouter>, document.getElementById('root')
+    <Provider store={store}>
+        <App state={store.getState()}
+             store={store}
+             dispatch={store.dispatch.bind(store)}/>
+    </Provider>
+</BrowserRouter>, document.getElementById('root')
 );
 
 
